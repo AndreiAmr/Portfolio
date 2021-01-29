@@ -1,9 +1,10 @@
 import React from 'react';
-import { Container, GlobalStyle, Header } from './appStyle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter } from 'react-router-dom';
+
 import Routes from './routes';
+import { Container, ContentContainer, GlobalStyle, Header } from './appStyle';
+import { FaMoon } from "react-icons/fa"
+import Asidebar from "./components/Asidebar";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <div className="header-area">
           <h1> {'{'} Andrei  <b> Amaral {'}'} </b> </h1>
 
-          <FontAwesomeIcon icon={faMoon} />
+          <FaMoon />
 
 
           <div className="menu-area">
@@ -28,9 +29,15 @@ function App() {
           <h1> Programador não por formação mas por vocação. </h1>
         </div>
       </Header>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
+      <ContentContainer>
+
+      <Asidebar/>
+
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+
+      </ContentContainer>
     </Container>
   );
 }
