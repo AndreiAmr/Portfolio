@@ -10,6 +10,7 @@ import SpaceAnimation from '../images/space-animation.json';
 import LaptopStudying from '../images/laptop-studying.json';
 
 const Home: React.FC = () => {
+    
     return (
         <Container>
             <PerfilContainer>

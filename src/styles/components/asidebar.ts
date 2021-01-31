@@ -19,7 +19,7 @@ export const AsideDesktop = styled.div`
 
     .avaible-to-talk {
         text-align:center;
-        font-size: 1.3em;
+        font-size: 1.1em;
         width: 100%;
         background-color: #A0FF8C;
         color: #8FA7B2;

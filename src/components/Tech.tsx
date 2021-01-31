@@ -2,6 +2,7 @@ import React from 'react';
 import { IconType } from 'react-icons';
 
 import { Tech as Container } from "../styles/components/tech";
+
 interface ITech {
     color: string,
     Icon: IconType,

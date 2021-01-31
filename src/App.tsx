@@ -1,43 +1,75 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter, Link } from 'react-router-dom';
 
 import Routes from './routes';
-import { Container, ContentContainer, GlobalStyle, Header } from './appStyle';
+import { Container, ContentContainer, GlobalStyle, Header, MobileOptionsArea } from './appStyle';
 import { FaMoon } from "react-icons/fa"
 import Asidebar from "./components/Asidebar";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isHomeActive, setIsHomeActive] = useState<boolean>(true);
+  const [isPortifolioActive, setIsPortifolioActive] = useState<boolean>(false);
+  const [isContactActive, setIsContactActive] = useState<boolean>(false);
+
+
+  function handleOnChangePage(homeActive: boolean, PortifolioActive: boolean, contactActive: boolean) {
+    setIsHomeActive(homeActive);
+    setIsPortifolioActive(PortifolioActive);
+    setIsContactActive(contactActive);
+  }
+
+
   return (
     <Container>
       <GlobalStyle />
-      <Header>
-        <div className="header-area">
-          <h1> {'{'} Andrei  <b> Amaral {'}'} </b> </h1>
+      <BrowserRouter>
 
-          <FaMoon />
+        <Header>
+          <div className="header-area">
+            <h1> {'{'} Andrei  <b> Amaral {'}'} </b> </h1>
+
+            <FaMoon />
 
 
-          <div className="menu-area">
-            <div className="menu-bar"></div>
-            <div className="menu-bar"></div>
-            <div className="menu-bar"></div>
+            <div className={`menu-area ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <div className="menu-bar"></div>
+              <div className="menu-bar"></div>
+              <div className="menu-bar"></div>
+            </div>
+
+            <div className="header-options">
+
+              <Link to="/" className={isHomeActive ? 'active' : ''} onClick={(e: any) => handleOnChangePage(true, false, false)}> Home </Link>
+              <Link to="/Projects" className={isPortifolioActive ? 'active' : ''} onClick={(e: any) => handleOnChangePage(false, true, false)}> Portifólio </Link>
+              <Link to="/Contact" className={isContactActive ? 'active' : ''} onClick={(e: any) => handleOnChangePage(false, false, true)}> Contato </Link>
+
+            </div>
+
           </div>
-        </div>
 
-        <div className="page-title-container">
-          <h3> Home</h3>
-          <h1> Programador não por formação mas por vocação. </h1>
-        </div>
-      </Header>
-      <ContentContainer>
+          <MobileOptionsArea className={isMenuOpen ? 'open' : ''}>
+            <Link to="/" className={isHomeActive ? 'active' : ''} onClick={(e: any) => handleOnChangePage(true, false, false)}> Home </Link>
+            <Link to="/Projects" className={isPortifolioActive ? 'active' : ''} onClick={(e: any) => handleOnChangePage(false, true, false)}> Portifólio </Link>
+            <Link to="/Contact" className={isContactActive ? 'active' : ''} onClick={(e: any) => handleOnChangePage(false, false, true)}> Contato </Link>
+          </MobileOptionsArea>
 
-      <Asidebar/>
 
-        <BrowserRouter>
+
+
+          <div className="page-title-container">
+            <h3> Home</h3>
+            <h1> Programador não por formação mas por vocação. </h1>
+          </div>
+        </Header>
+        <ContentContainer>
+
+          <Asidebar />
+
           <Routes />
-        </BrowserRouter>
 
-      </ContentContainer>
+        </ContentContainer>
+      </BrowserRouter>
     </Container>
   );
 }
