@@ -9,6 +9,8 @@ import Lottie from 'react-lottie';
 import SpaceAnimation from '../images/space-animation.json';
 import LaptopStudying from '../images/laptop-studying.json';
 
+import dataContent from "../data/pages"; 
+
 const Home: React.FC = () => {
     
     return (
