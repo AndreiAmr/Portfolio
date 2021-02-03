@@ -155,7 +155,6 @@ export const Header = styled.header`
         width: 100%;
         background-image: linear-gradient(to right, #22CDD8, #21F2FF);
         overflow: hidden;
-
         > h3 {
             font-size: 20px;
             color: #ffffff79;
@@ -200,6 +199,7 @@ export const Header = styled.header`
         }
 
         > .page-title-container {
+            padding-left: 20px;
 
             height: 180px;
             

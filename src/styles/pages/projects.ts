@@ -18,7 +18,8 @@ export const Container = styled.div`
 
     @media(min-width: 900px){
         margin-top: 0;
-        width: 70%
+        width: 70vw;
+        margin: 0 auto 20px
     }
     
 `

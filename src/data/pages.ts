@@ -8,6 +8,7 @@ export default {
 
         mySkillsTitle: "Minhas Habilidades"
     },
+
     pages: [
         {
             pageName: "Home",
@@ -37,20 +38,41 @@ export default {
             },
 
             mainTechs: {
-                paragraphs: [
+                techs: [
                     'JavaScript', "Typescript", 'React', 'React Native', 'Redux'
+                ],
+                paragraphs: [
+                    'Com um tempo de estudos e uma certa ajuda do meu irmão, consegui entender como funciona o Node e desenvolvi uma aplicação para realizar um CRUD. (NodeJS, Express, MongoDB ou Firebase).',
+                    'Hoje são 5 anos de estudos e depois de muitas pedras no caminho, finalmente me sinto apto para entrar no mercado de trabalho.'
                 ]
             },
 
             mySkills: {
                 title: "Minhas Habilidades",
-                paragraph: [
+                paragraphs: [
                     'A baixo está a lista de tecnologias em que tenho focado nos ultimos dois anos de estudos.'
-                ] 
+                ]
             }
+        },
 
+        {
+            pageName: "Portifólio",
+            pageTitle: "Meus projetos de estudos.",
 
+            firstProjectTitle: 'Picos Web',
+            readAbout: 'Ler sobre',
+            
+            secondProjectTitle: 'Picos Mobile',
+        }, 
 
+        {
+            pageName: 'Contato',
+            pageTitle: "E ae, vamo bater um papo ?",
+
+            formInstruction: "Preencha o formulário abaixo e aguarde que entro em contato !",
+            formTip: "* Todos os dados são obrigatórios",
+            socialNetworksText: "Ou envie-me uma mensagem em minhas redes sociais =)",
+            thanks: 'Obrigado por ter chegado até aqui!!'
         }
     ]
-}
+} 

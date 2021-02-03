@@ -5,15 +5,22 @@ import Routes from './routes';
 import { Container, ContentContainer, GlobalStyle, Header, MobileOptionsArea } from './appStyle';
 import { FaMoon } from "react-icons/fa"
 import Asidebar from "./components/Asidebar";
+import dataContent from "./data/pages";
+
 
 function App() {
+  const [currentPageObject, setCurrentPageObject] = useState<number>(0);
+
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isHomeActive, setIsHomeActive] = useState<boolean>(true);
   const [isPortifolioActive, setIsPortifolioActive] = useState<boolean>(false);
   const [isContactActive, setIsContactActive] = useState<boolean>(false);
 
-
   function handleOnChangePage(homeActive: boolean, PortifolioActive: boolean, contactActive: boolean) {
+    if (homeActive) setCurrentPageObject(0);
+    if (PortifolioActive) setCurrentPageObject(1)
+    if (contactActive) setCurrentPageObject(2)
+
     setIsHomeActive(homeActive);
     setIsPortifolioActive(PortifolioActive);
     setIsContactActive(contactActive);
@@ -58,8 +65,8 @@ function App() {
 
 
           <div className="page-title-container">
-            <h3> Home</h3>
-            <h1> Programador não por formação mas por vocação. </h1>
+            <h3> {dataContent.pages[currentPageObject].pageName}</h3>
+            <h1> {dataContent.pages[currentPageObject].pageTitle} </h1>
           </div>
         </Header>
         <ContentContainer>

@@ -9,10 +9,10 @@ import Lottie from 'react-lottie';
 import SpaceAnimation from '../images/space-animation.json';
 import LaptopStudying from '../images/laptop-studying.json';
 
-import dataContent from "../data/pages"; 
+import dataContent from "../data/pages" ;
 
 const Home: React.FC = () => {
-    
+
     return (
         <Container>
             <PerfilContainer>
@@ -26,30 +26,24 @@ const Home: React.FC = () => {
 
                 <div className="image-area">
                     <img src={Perfil} alt="Perfil" />
-
                 </div>
             </PerfilContainer>
 
             <AboutMeContainer>
                 <h1>
-                    Sobre mim
+                    {dataContent.pages[0].aboutMeTitle}
                 </h1>
 
-                <p> Meu nome é <b> Andrei Jesus do Amaral</b>, tenho 19 anos, resido atualmente na região do Grajaú, na grande cidade <b> São Paulo </b>.</p>
-
-                <p> Sou desenvolvedor, não por formação mas por vocação. </p>
-                <p> Desde pequeno sempre amei o mundo da tecnologia e ficava me pergutando "como as pessoas fazem site e aplicativos ?" </p>
-                <p> Aos meus 14 anos, meu irmão me auxíliou a começar meus estudos em desenvolvimento de interfaces, e desde então meu amor por tecnologia não para de crescer. </p>
+                {dataContent.pages[0].aboutMeParagraphs?.map((text: string, indice: number) => <p key={indice}>{text}</p>) }
 
                 <h1> Sou amante de: </h1>
 
                 <div className="text-with-animation-aside">
 
                     <ul>
-                        <li>Tecnologia </li>
-                        <li>Astronomia</li>
-                        <li>Animais</li>
+                        {dataContent.pages[0].ImLoverOf?.map((text: string, indice: number) => <li key={indice}> {text} </li>)}
                     </ul>
+
                     <Lottie options={{
                         animationData: SpaceAnimation,
                         autoplay: true,
@@ -63,24 +57,17 @@ const Home: React.FC = () => {
 
             <StudyJorney>
                 <h1>
-                    Jornada de estudos
+                    {dataContent.pages[0].studiesJourney?.title}
                 </h1>
 
-                <p> Comecei meus estudos com desenvolvimento de interfaces com HTML, CSS e JavaScript.</p>
-                <p> Sempre achei um máximo estudar essas tecnologias e ir vendo os elementos surgirem na tela.</p>
-                <p> Há dois anos, ouvi falar sobre o ReactJS e quando vi que era possível juntar as minhas 3 tecnologias favoritas em 'uma só' nunca mais larguei do React hahaha.</p>
-
-                <p> Depois de um tempo estudando React, senti que precisava ter uma certa noção de backend, para que minhas aplicações web começassem a ter mais interações com os usuários. </p>
+                {dataContent.pages[0].studiesJourney?.paragraphs.map((text: string, indice: number) => <p key={indice}> {text} </p>)}
 
                 <h1> Principais techs </h1>
 
                 <div className="main-techs">
                     <ul>
-                        <li>Javascript</li>
-                        <li>Typescript</li>
-                        <li>React</li>
-                        <li>React Native</li>
-                        <li>Redux</li>
+                        {dataContent.pages[0].mainTechs?.techs.map(( text: string, indice: number ) => <li key={indice}> {text} </li>)}
+
                     </ul>
 
                     <Lottie options={{
@@ -91,10 +78,8 @@ const Home: React.FC = () => {
                 </div>
 
 
+                {dataContent.pages[0].mainTechs?.paragraphs.map(( text: string, indice: number) => <p key={indice}> {text} </p>)}
 
-                <p> Com um tempo de estudos e uma certa ajuda do meu irmão, consegui entender como funciona o Node e desenvolvi uma aplicação para realizar um CRUD. (NodeJS, Express, MongoDB ou Firebase). </p>
-
-                <p> Hoje são 5 anos de estudos e depois de muitas pedras no caminho, finalmente me sinto apto para entrar no mercado de trabalho. </p>
 
             </StudyJorney>
 
@@ -102,9 +87,9 @@ const Home: React.FC = () => {
 
             <MySkillsContainer>
                 <h1>
-                    Minhas habilidades
+                    {dataContent.pages[0].mySkills?.title}
                 </h1>
-                <p> A baixo está a lista de tecnologias em que tenho focado nos ultimos dois anos de estudos. </p>
+                {dataContent.pages[0].mySkills?.paragraphs.map((text: string, indice: number) => <p key={indice}> {text} </p> )}
 
                 <div className="techs-area">
                     <Tech color="#61DAFB" Icon={SiReact} width={40} height={40} />
