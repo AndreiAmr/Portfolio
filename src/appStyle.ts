@@ -159,6 +159,13 @@ export const Header = styled.header`
             font-size: 20px;
             color: #ffffff79;
             margin: 5px 10px;
+            transform: translateY(-60px);
+
+            @keyframes animatePageName {
+                 to {
+                    transform: translateY(0)
+                }
+            }
         }
 
         > h1 {
@@ -166,6 +173,14 @@ export const Header = styled.header`
             color: #fff;
             margin: 0 10px;
             text-align: left;
+            animation-delay: .5s;
+            opacity: 0;
+
+            @keyframes animatePageTitle {
+                to {
+                    opacity: 1
+                }
+            }
         }
         
         &:after {
@@ -177,17 +192,49 @@ export const Header = styled.header`
             bottom: -20px;
             right: 0;
             left: 0;
-            transform: rotate(-3deg);
+            transform: rotate(0deg) translateY(40px);
+
+            @keyframes animateAfterElement {
+                to {
+                    transform: rotate(-3deg) translateY(0);
+                }
+            }
             
             @media(min-width: 900px) {
                 height: 100px;
                 bottom: -40px;
                 right: -10px;
                 left: -10px;
-                transform: rotate(-2deg);
+                
+            @keyframes animateAfterElement {
+                to {
+                    transform: rotate(-2deg) translateY(0);
+                }
+            }
+                
             }
             
         }
+
+        &.visible {
+
+            > h1 {
+                animation: animatePageTitle 1s forwards;
+                animation-delay: .3s;
+            }
+            > h3 { 
+                animation: animatePageName .5s forwards;    
+            }
+
+            &:after {
+                animation: animateAfterElement .5s forwards;    
+                animation-delay: .4s;
+
+            }
+
+        }
+
+        
     }
 
     
