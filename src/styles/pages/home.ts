@@ -7,7 +7,7 @@ export const Container = styled.div`
     background-color: #fff;
     padding: 30px 10px;
 
-    > .divisor { 
+    .divisor { 
         width: 90%;
         margin: 20px auto;
         height: 1px;

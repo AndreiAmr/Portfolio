@@ -36,6 +36,8 @@ const Home: React.FC = () => {
 
                 {dataContent.pages[0].aboutMeParagraphs?.map((text: string, indice: number) => <p key={indice}>{text}</p>) }
 
+                <div className="divisor"></div>
+
                 <h1> Sou amante de: </h1>
 
                 <div className="text-with-animation-aside">
@@ -61,6 +63,8 @@ const Home: React.FC = () => {
                 </h1>
 
                 {dataContent.pages[0].studiesJourney?.paragraphs.map((text: string, indice: number) => <p key={indice}> {text} </p>)}
+
+                <div className="divisor"></div>
 
                 <h1> Principais techs </h1>
 
