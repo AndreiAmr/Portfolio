@@ -241,7 +241,7 @@ export const Header = styled.header`
     @media(min-width:768px){
         > .header-area {
             > h1 {
-                font-size: 1.6em
+                font-size: 20px
             }
         }
 

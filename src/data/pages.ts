@@ -17,6 +17,7 @@ export default {
             aboutMeTitle: "Sobre mim",
             aboutMeParagraphs: [
                 'Meu nome é Andrei Jesus do Amaral, tenho 19 anos, resido atualmente na região do Grajaú, na grande cidade São Paulo.',
+                'Minha lingua nativa é o Português, mas também falo Inglês no nivel intermediario.',
                 'Desde pequeno sempre amei o mundo da tecnologia e ficava me pergutando "como as pessoas fazem site e aplicativos ?"',
                 'Aos meus 14 anos, meu irmão me auxíliou a começar meus estudos em desenvolvimento de interfaces, e desde então meu amor por tecnologia não para de crescer.'
             ],
