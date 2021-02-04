@@ -17,14 +17,11 @@ const Contact: React.FC = () => {
   init("user_pBCnrjW9bWoLlE0iqAoup");
 
   async function handleSendEmail(e: FormEvent) {
-    // e.preventDefault();
     emailjs.send("portifolio_email_id", "template_4s219vx", {
       from_name: name,
       message: message,
       from_email: email,
-    }).then(e => {
-
-    }); 
+    }) 
   }
 
 
@@ -35,7 +32,7 @@ const Contact: React.FC = () => {
       <FormContainer>
         <img src={EmailIcon} alt="Email Icone" className="email-icon" />
 
-        <Form>
+        <Form action='/'>
           <input type="text" placeholder='Nome' required minLength={3} onChange={e => setName(e.target.value)} />
           <input type="email" placeholder='Email' required onChange={e => setEmail(e.target.value)} />
           <input type="text" placeholder="Assunto" required onChange={e => setTitle(e.target.value)} />

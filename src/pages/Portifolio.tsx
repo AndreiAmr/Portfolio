@@ -15,27 +15,27 @@ const Portifiolio: React.FC = () => {
         <Container>
             <h1> Projetos de estudos </h1>
 
-            <ProjectItem>
-                <img src={PicosWeb} alt="Picos web" />
+            {dataContent.pages[1].projects?.map((project, indiceProject) => {
+                return (
+                    <ProjectItem key={indiceProject}>
+                        
+                        {project.images.map((imageName: string, indice: number) => {
+                            const Image = require(`../images/${imageName}.png`);
+                            
+                            return(
+                                <img src={Image.default} key={indice} />
+                            )
+                        })}
+                        
+                        <div className="project-name">
+                            <h1> {project.name} </h1>
+                            <p> Ler sobre <FaArrowRight /></p>
+                        </div>
+                    </ProjectItem>
+                )
+            })}
 
-                <div className="project-name">
-                    <h1> {dataContent.pages[1].firstProjectTitle}</h1>
-                    <p> {dataContent.pages[1].readAbout} <FaArrowRight /></p>
-                </div>
-            </ProjectItem>
-            
-            <ProjectItem>
-                <div className="images">
-                <img src={PicosMobileSplash} alt="Picos web" />
-                <img src={PicosMobileMap} alt="Picos web" />
 
-                </div>
-
-                <div className="project-name">
-                    <h1> Picos <span>Web</span></h1>
-                    <p> {dataContent.pages[1].secondProjectTitle} <FaArrowRight />  </p>
-                </div>
-            </ProjectItem>
         </Container>
     );
 }

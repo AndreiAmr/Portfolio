@@ -32,15 +32,14 @@ export const ProjectItem = styled.section`
     background-image: linear-gradient(65deg, #21F2FF80, #fff);
     margin: 20px 10px;
     border-radius: 10px;
-    max-width: 350px;
+    max-width: 370px;
     margin: 20px auto;
     border: 1px solid #21F2FF;
     /* box-shadow: 4px 1px 4px #21F2FF70;  */
     
 
     >img {
-        width: 55%;
-        margin: 5px;
+        margin: 5px
         
     }    
 

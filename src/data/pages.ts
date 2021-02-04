@@ -60,10 +60,30 @@ export default {
             pageName: "Portifólio",
             pageTitle: "Meus projetos de estudos.",
 
-            firstProjectTitle: 'Picos Web',
-            readAbout: 'Ler sobre',
-            
-            secondProjectTitle: 'Picos Mobile',
+            projects: [
+                {
+                    name: "Picos Web",
+                    images: ['picos-web'],
+                    paragraphs: [
+                        'O projeto web foi desenvolvido para somente vizualização dos locais no mapa indicados pelos usuários do aplicativo.',
+                        'Também foi desenvolvido com o intuito de colocar em pratica tudo que venho estudando todo esse tempo, como por exemplo: ',
+                        'Criação de interfaces web e mobile com React, Typescript e Redux;',
+                        'Modelagem e consumo de API REST com Nodejs e mongoDB;',
+                        'Experiencia do usuário na aplicação.'
+                    ]
+                },
+                {
+                    name: "Picos Mobile",
+                    images: ['picos-mobile-map', 'picos-mobile-splash'],
+                    paragraphs: [
+                        'O Projeto foi desenvolvido com o intuito de ajudar os skatistas.',
+                        'A funcionalidade do projeto é marcar locais no mapa que seria possível andar de skate.',
+                        'É possível também visualizar mais informações sobre o local, como por exemplo: ',
+                        'Fotos, instruções para chegar no local;',
+                        'Rotas no Google Maps e se abre aos finais de semana.'
+                    ]
+                }
+            ]
         }, 
 
         {
