@@ -58,13 +58,14 @@ export const ProjectItem = styled.section`
             color: #21C4CE
         }
 
-        > p {
+        > a {
             font-size: 15px;
             text-align: center;
             color: #22CDD8;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-decoration: none;
 
             > svg {
                 margin-left: 10px;

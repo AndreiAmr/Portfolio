@@ -13,8 +13,8 @@ export const Container = styled.div`
         align-items: center;
 
         >img {
-            width: 80%;
-            max-width: 400px;
+            margin: 5px;
+       
             margin-top: 20px;
         }        
     }
@@ -42,6 +42,11 @@ export const Container = styled.div`
 
     @media(min-width: 900px){
         width: 70%;
+
+        > .image-container img {
+            min-height: 200px;
+            max-width: 400px;
+        }
     }
     
 `

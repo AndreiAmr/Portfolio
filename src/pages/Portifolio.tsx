@@ -8,6 +8,7 @@ import PicosMobileSplash from '../images/picos-mobile-splash.png';
 import PicosWeb from '../images/picos-web.png'
 
 import dataContent from "../data/pages";
+import { Link } from 'react-router-dom';
 
 
 const Portifiolio: React.FC = () => {
@@ -29,7 +30,7 @@ const Portifiolio: React.FC = () => {
                         
                         <div className="project-name">
                             <h1> {project.name} </h1>
-                            <p> Ler sobre <FaArrowRight /></p>
+                            <Link to={`/ProjectDetail/${indiceProject}`}> Ler sobre <FaArrowRight /></Link>
                         </div>
                     </ProjectItem>
                 )

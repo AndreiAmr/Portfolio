@@ -1,21 +1,35 @@
 import React from 'react';
 
 import { Container } from '../styles/pages/projectDetail';
-import PicosMobile from "../images/picos-web.png";
+import dataContent from "../data/pages"
 
-const ProjectDetail: React.FC = () => {
+const ProjectDetail: React.FC = (props: any) => {
+    const { index }= props.match.params;
+    const portifolioPageObject = dataContent.pages[1] as any ;
+    const projectObject = portifolioPageObject.projects[index];
+ 
+
     return (
         <Container >
             <div className="image-container">
-                <img src={PicosMobile} alt="" />
+                {
+                    projectObject.images.map( (e: any, indice: number) => {
+                        const imageObject = require(`../images/${e}.png`)
+                        return (
+                            <img src={imageObject.default} key={indice} alt='Sobre o local'/>
+                        )
+                    })
+                }
             </div>
 
-            <h1> Picos Web</h1>
-            <p> Aplicação web desenvolvida com o intuíto de marcar no mapa os locais que os usuários do " Picos Mobile " indicaram.</p>
-            <p> Resolvi desenvolver esta aplicação para estudar sobre api e como uma aplicação web e mobile podem conter as o mesmo conteúdo vindo do banco.</p>
+            <h1> { projectObject.name }</h1>
+            {projectObject.paragraphs.map( (text: string, indice: number) => {
+                return (
+                    <p key={indice}> {text}</p>
+                )
+            })}
 
-            <h3> * Projeto temporariamente fora do ar *</h3>
-            
+
         </Container>
     );
 }
