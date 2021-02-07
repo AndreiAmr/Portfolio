@@ -60,7 +60,8 @@ export const AsideDesktop = styled.div`
             font-size: 20px;
 
             &:hover {
-
+                color: #999;
+                border: 2px solid blue;
             }
         }
     }

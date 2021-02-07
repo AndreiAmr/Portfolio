@@ -7,12 +7,14 @@ interface ITech {
     color: string,
     Icon: IconType,
     width: number,
-    height: number
+    height: number,
+    title: string
 }
 
-const Tech: React.FC<ITech> = ({ color, Icon, width, height }) => {
+const Tech: React.FC<ITech> = ({ color, Icon, width, height, title }) => {
     return (
         <Container color={color} width={width} height={height}>
+            <p>{title}</p>
             {<Icon/>}
         </Container>
     )
