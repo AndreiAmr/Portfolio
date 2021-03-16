@@ -3,9 +3,6 @@ import React from 'react';
 import { FaArrowRight } from "react-icons/fa"
 
 import { Container, ProjectItem } from '../styles/pages/projects';
-import PicosMobileMap from '../images/picos-mobile-map.png';
-import PicosMobileSplash from '../images/picos-mobile-splash.png';
-import PicosWeb from '../images/picos-web.png'
 
 import dataContent from "../data/pages";
 import { Link } from 'react-router-dom';
@@ -24,7 +21,7 @@ const Portifiolio: React.FC = () => {
                             const Image = require(`../images/${imageName}.png`);
                             
                             return(
-                                <img src={Image.default} key={indice} />
+                                <img src={Image.default} key={indice} alt="Projeto"/>
                             )
                         })}
                         

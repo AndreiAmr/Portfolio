@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
 
 import Routes from './routes';
 import { Container, ContentContainer, GlobalStyle, Header, MobileOptionsArea } from './appStyle';
-import { FaMoon } from "react-icons/fa"
 import Asidebar from "./components/Asidebar";
 import dataContent from "./data/pages";
 
@@ -49,9 +48,6 @@ function App() {
         <Header>
           <div className="header-area">
             <h1> {'{'} Andrei  <b> Amaral {'}'} </b> </h1>
-
-            <FaMoon />
-
 
             <div className={`menu-area ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <div className="menu-bar"></div>
