@@ -1,6 +1,6 @@
-import { Flex, Text } from "@chakra-ui/react";
-import Name from "./components/Name";
-import Menu from "./components/Menu";
+import { Flex, Text } from '@chakra-ui/react';
+import Name from './components/Name';
+import Menu from './components/Menu';
 
 const Header = () => {
   return (

@@ -1,4 +1,4 @@
-import { Button as ChakraButton } from "@chakra-ui/react";
+import { Button as ChakraButton } from '@chakra-ui/react';
 
 interface ButtonProps {
   onClick: () => void;
@@ -12,7 +12,7 @@ const Button = ({ label, onClick, bgColor, labelColor }: ButtonProps) => {
     <ChakraButton
       onClick={onClick}
       width="125px"
-      height={"40px"}
+      height={'40px'}
       borderRadius="20px"
       bgColor={bgColor}
       boxShadow="4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset"
@@ -21,7 +21,7 @@ const Button = ({ label, onClick, bgColor, labelColor }: ButtonProps) => {
       _focus={{}}
       color={labelColor}
       fontWeight="medium"
-      fontSize={"14px"}
+      fontSize={'14px'}
     >
       {label}
     </ChakraButton>

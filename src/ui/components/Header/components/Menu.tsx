@@ -5,8 +5,8 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-} from "@chakra-ui/react";
-import MenuIcon from "@/ui/assets/icons/menu-icon.svg";
+} from '@chakra-ui/react';
+import MenuIcon from '@/ui/assets/icons/menu-icon.svg';
 
 const Menu = () => {
   return (
@@ -17,7 +17,7 @@ const Menu = () => {
         _active={{}}
         _focus={{}}
         _hover={{}}
-        display={["inline", "none"]}
+        display={['inline', 'none']}
       >
         <Image src={MenuIcon} />
       </MenuButton>

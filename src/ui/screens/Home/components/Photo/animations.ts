@@ -1,10 +1,10 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
 
 export const AnimationContainer = styled.div`
   position: relative;
 
   .perfil-animation-1::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 200px;
     height: 200px;
@@ -17,7 +17,7 @@ export const AnimationContainer = styled.div`
   }
 
   .perfil-animation-1::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 300px;
     height: 300px;

@@ -1,25 +1,25 @@
-import Button from "@/ui/components/Button";
-import { Box, Flex, Text } from "@chakra-ui/react";
-import Photo from "./components/Photo";
-import * as S from "./animations";
-import { useEffect, useState } from "react";
+import Button from '@/ui/components/Button';
+import { Box, Flex, Text } from '@chakra-ui/react';
+import Photo from './components/Photo';
+import * as S from './animations';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
-  const [iamText, setIamText] = useState<string>("Andrei Amaral");
+  const [iamText, setIamText] = useState<string>('Andrei Amaral');
 
   const toggleIAM = () => {
     setTimeout(() => {
-      setIamText("Andrei Amaral");
+      setIamText('Andrei Amaral');
     }, 0);
 
     setTimeout(() => {
-      setIamText("Dev Frontend");
+      setIamText('Dev Frontend');
     }, 3000);
     setTimeout(() => {
-      setIamText("Dev Mobile");
+      setIamText('Dev Mobile');
     }, 6000);
     setTimeout(() => {
-      setIamText("Dev NodeJS");
+      setIamText('Dev NodeJS');
     }, 9000);
   };
 
@@ -36,22 +36,22 @@ const Home = () => {
         padding="2vh"
         width="100%"
         alignItems="center"
-        flexDirection={["column", "column", "row"]}
+        flexDirection={['column', 'column', 'row']}
         paddingTop="25px"
         position="relative"
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <Text fontSize="4vw">Olá, eu sou</Text>
           <Text
-            fontSize={"8vw"}
+            fontSize={'8vw'}
             color="purple.800"
             className="i-am-text"
-            textAlign={"left"}
+            textAlign={'left'}
           >
             {iamText}
           </Text>
           <Text
-            fontSize={"3vw"}
+            fontSize={'3vw'}
             color="gray.600"
             maxW="75vw"
             textAlign="center"
@@ -64,7 +64,7 @@ const Home = () => {
               bgColor="yellow.800"
               label="Contrate-me"
               onClick={() => {
-                console.log("hire me");
+                console.log('hire me');
               }}
               labelColor="white"
             />
@@ -72,7 +72,7 @@ const Home = () => {
               bgColor="#D9E3FF"
               label="Meus trabalhos"
               onClick={() => {
-                console.log("meus jobs");
+                console.log('meus jobs');
               }}
               labelColor="purple.700"
             />

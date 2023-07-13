@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
 
 export const AnimationContainer = styled.div`
   .i-am-text {
@@ -6,13 +6,13 @@ export const AnimationContainer = styled.div`
   }
 
   .i-am-text::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background: ${({ theme }) => theme.blue["700"]};
+    background: ${({ theme }) => theme.blue['700']};
     border-left: 2px solid ${({ theme }) => theme.purple[600]};
     animation: typing 3s steps(14) infinite;
   }

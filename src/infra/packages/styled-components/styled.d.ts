@@ -1,4 +1,4 @@
-import "styled-components";
+import 'styled-components';
 
 interface ColorsProps {
   500?: string;
@@ -16,7 +16,7 @@ interface ThemeCommonProps {
   yellow: ColorsProps;
 }
 
-declare module "styled-components" {
+declare module 'styled-components' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface DefaultTheme extends ThemeCommonProps {}
 }
