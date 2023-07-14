@@ -11,7 +11,6 @@ const Home = () => {
     setTimeout(() => {
       setIamText('Andrei Amaral');
     }, 0);
-
     setTimeout(() => {
       setIamText('Dev Frontend');
     }, 3000);
@@ -25,20 +24,22 @@ const Home = () => {
 
   useEffect(() => {
     toggleIAM();
-    setInterval(toggleIAM, 9000);
+    setInterval(toggleIAM, 12000);
   }, []);
 
   return (
     <S.AnimationContainer>
       <Flex
-        bgGradient="linear(to-r, #F0F4FF,#ECF9FF)"
+        // bgGradient="linear(to-r, blue.500, blue.600)"
         // height="55vh"
+        background="blue.600"
         padding="2vh"
         width="100%"
         alignItems="center"
         flexDirection={['column', 'column', 'row']}
         paddingTop="25px"
         position="relative"
+        transition="all 0.2s"
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <Text fontSize="4vw">Olá, eu sou</Text>

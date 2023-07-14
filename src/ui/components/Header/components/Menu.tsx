@@ -17,7 +17,8 @@ const Menu = () => {
         _active={{}}
         _focus={{}}
         _hover={{}}
-        display={['inline', 'none']}
+        display={['inline']}
+        outline="none"
       >
         <Image src={MenuIcon} />
       </MenuButton>
