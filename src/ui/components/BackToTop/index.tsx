@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { IconButton, Image } from '@chakra-ui/react';
 import UpIcon from '@assets/icons/up.svg';
 import * as S from './animations';
