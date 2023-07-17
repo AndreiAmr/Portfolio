@@ -3,67 +3,73 @@ import { styled } from 'styled-components';
 export const AnimationContainer = styled.div`
   position: relative;
 
+  height: 27vh;
+  width: 27vh;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  margin-top: 10px;
+
   .perfil-animation-1::before {
     content: '';
     position: absolute;
-    width: 200px;
-    height: 200px;
+
     border-radius: 50%;
 
     background-color: #c6b2f3;
     z-index: 1;
 
-    animation: profile-animation 2s infinite;
+    animation: profile-animation 3s infinite;
   }
 
   .perfil-animation-1::after {
     content: '';
     position: absolute;
-    width: 300px;
-    height: 300px;
+
     border-radius: 50%;
 
     background-color: #c6b2f350;
     z-index: 1;
 
-    animation: profile-animation-after 2s infinite;
+    animation: profile-animation-after 3s infinite;
     animation-delay: 0.2s;
     opacity: 0;
   }
 
   @keyframes profile-animation {
     0% {
-      width: 245px;
-      height: 245px;
+      width: 65%;
+      height: 65%;
     }
 
     50% {
-      width: 213px;
-      height: 213px;
+      width: 91%;
+      height: 91%;
     }
 
     100% {
-      width: 245px;
-      height: 245px;
+      width: 65%;
+      height: 65%;
     }
   }
 
   @keyframes profile-animation-after {
     0% {
-      width: 265px;
-      height: 265px;
+      width: 0%;
+      height: 0%;
       opacity: 1;
     }
 
     50% {
-      width: 213px;
-      height: 213px;
+      width: 100%;
+      height: 100%;
       opacity: 1;
     }
 
     100% {
-      width: 265px;
-      height: 265px;
+      width: 0%;
+      height: 0%;
       opacity: 1;
     }
   }

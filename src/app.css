@@ -2,10 +2,21 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none !important;
+  transition: all 0.4s;
 }
 
 html,
-body {
-  height: 100%;
+body,
+#root {
+  position: relative;
+
   overflow-x: hidden;
 }
