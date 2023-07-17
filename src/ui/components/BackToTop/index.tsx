@@ -22,11 +22,17 @@ const BackToTop = () => {
         width="6vh"
         height="6vh"
         borderRadius="50%"
-        background="yellow.800"
+        background="yellow.800 !important"
         aria-label="back-top-icon"
         id="back-to-top"
         icon={<Image w="20px" src={UpIcon} />}
         zIndex={99}
+        _focus={{}}
+        _active={{
+          opacity: 0.7,
+          boxShadow: 'none',
+          transition: 'all 0.2s',
+        }}
         onClick={() => {
           window.scrollTo({
             top: 0,

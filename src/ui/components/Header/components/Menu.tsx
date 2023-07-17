@@ -22,7 +22,7 @@ const Menu = () => {
       >
         <Image src={MenuIcon} />
       </MenuButton>
-      <MenuList>
+      <MenuList transition="all 0.1s">
         <MenuItem>Home</MenuItem>
         <MenuItem>Sobre</MenuItem>
         <MenuItem>Serviços</MenuItem>
