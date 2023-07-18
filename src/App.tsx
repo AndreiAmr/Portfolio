@@ -5,6 +5,7 @@ import Home from '@/ui/screens/Home';
 import About from '@/ui/screens/About';
 import Controllers from './ui/components/Controllers';
 import { ControllerContextProvider } from './infra/contexts/Controllers.context';
+import Skills from './ui/screens/Skills';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Header />
         <Home />
         <About />
-
+        <Skills />
         <Controllers />
       </PackagesProvider>
     </ControllerContextProvider>

@@ -11,11 +11,13 @@ const Service = ({ icon, title, description }: ServiceProps) => {
     <Flex
       height="173px"
       width="364px"
-      borderRadius="10px"
-      boxShadow="4px 4px 14px 1px rgba(202, 220, 237, 0.74) inset"
+      borderRadius="25px"
+      boxShadow="20px 20px 60px #d4d4d4,
+             -20px -20px 60px #ffffff"
       alignItems="center"
       padding="12px"
       paddingLeft="16px"
+      background="linear-gradient(145deg, #e6e6e6, #ffffff)"
     >
       <Image width="80px" height="80px" src={icon} />
       <Box marginLeft="15px">

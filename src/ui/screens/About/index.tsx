@@ -35,6 +35,7 @@ const About = () => {
         gridGap="20px"
         wrap="wrap"
         justifyContent="center"
+        width="80vw"
       >
         <Service
           icon={DevelopmentIcon}
