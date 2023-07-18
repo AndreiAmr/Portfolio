@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Experience from '@/ui/components/Experience';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import { ControllerContext } from '@/infra/contexts/Controllers.context';
 import { getColor } from '@/infra/helpers/colors';
 import { ThemeEnum } from '@/infra/contexts/types';

@@ -1,7 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 
 import Percentage from './Percentage';
-import { getColor } from '@/infra/helpers/colors';
 
 interface ExperienceProps {
   color: string;
