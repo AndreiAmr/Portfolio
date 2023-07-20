@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
 import Percentage from './Percentage';
 
@@ -40,16 +40,16 @@ const Experience = ({
           fontSize="1.3vh"
           fontWeight="regular"
           color="gray.500"
-          marginBottom="20px"
+          // marginBottom="20px"
         >
           {description}
         </Text>
 
-        <Box borderBottom={`2px solid ${color}`}>
+        {/* <Box borderBottom={`2px solid ${color}`}>
           <Text color={color} fontWeight="semibold">
             Ler mais
           </Text>
-        </Box>
+        </Box> */}
       </Flex>
     </Flex>
   );

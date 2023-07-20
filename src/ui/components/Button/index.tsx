@@ -14,8 +14,7 @@ const Button = ({ label, onClick, bgColor, labelColor }: ButtonProps) => {
       width="125px"
       height={'40px'}
       borderRadius="20px"
-      bgColor={bgColor}
-      background={`linear-gradient(145deg, ${bgColor}, #d4e0e6)`}
+      backgroundImage={`linear-gradient(145deg, ${bgColor} 70%, #d4e0e6)`}
       boxShadow="7px 7px 15px #d4e0e6,
       -7px -7px 15px #ffffff"
       _hover={{}}

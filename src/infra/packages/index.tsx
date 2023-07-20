@@ -1,5 +1,5 @@
 import { PropsWithChildren, useContext } from 'react';
-import { ChakraProvider, Flex, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, styledDarkTheme } from './styled-components/theme';
 import { chakraDarkTheme, chakraTheme } from './chakraUI/theme.colors';
