@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Button, Flex, IconButton, Image } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import LightOn from '@assets/icons/light-on.png';
 import LightOff from '@assets/icons/light-off.svg';
 import LanguageIcon from '@assets/icons/language.png';
@@ -22,6 +22,7 @@ const Controllers = () => {
         bottom="20px"
         left="20px"
         gap="13px"
+        zIndex={999}
       >
         <ControllerButton icon={LanguageIcon} />
         <ControllerButton

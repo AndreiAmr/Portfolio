@@ -14,14 +14,15 @@ const Button = ({ label, onClick, bgColor, labelColor }: ButtonProps) => {
       width="125px"
       height={'40px'}
       borderRadius="20px"
-      bgColor={bgColor}
-      boxShadow="4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset"
+      backgroundImage={`linear-gradient(145deg, ${bgColor} 70%, #d4e0e6)`}
+      boxShadow="7px 7px 15px #d4e0e6,
+      -7px -7px 15px #ffffff"
       _hover={{}}
       _active={{}}
       _focus={{}}
       color={labelColor}
       fontWeight="medium"
-      fontSize={'14px'}
+      fontSize={'1.5vh'}
     >
       {label}
     </ChakraButton>

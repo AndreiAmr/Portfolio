@@ -1,5 +1,5 @@
 import Button from '@/ui/components/Button';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import Photo from './components/Photo';
 import * as S from './animations';
 import { useEffect, useState } from 'react';

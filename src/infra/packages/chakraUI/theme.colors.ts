@@ -27,6 +27,9 @@ const chakraTheme = {
       700: '#FFBF40',
       800: '#FFBF40',
     },
+    green: {
+      800: '#04D361',
+    },
   },
 
   styles: {
@@ -66,6 +69,9 @@ const chakraDarkTheme = {
       600: '#FFD072',
       700: '#FFBF40',
       800: '#FFBF40',
+    },
+    green: {
+      800: '#04D361',
     },
   },
 

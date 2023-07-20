@@ -1,5 +1,5 @@
 import Service from '@/ui/components/Service';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import DevelopmentIcon from '@assets/images/development.png';
 import AppDev from '@assets/images/app-development.png';
 import UiUx from '@assets/images/ui-ux.png';
@@ -15,6 +15,7 @@ const About = () => {
       background="background"
       paddingTop="3vh"
       padding="24px"
+      overflow="hidden"
     >
       <Text color="purple.800" fontSize="3.3vw" fontWeight="semibold">
         Minha especialidade
@@ -35,6 +36,7 @@ const About = () => {
         gridGap="20px"
         wrap="wrap"
         justifyContent="center"
+        width="100vw"
       >
         <Service
           icon={DevelopmentIcon}
