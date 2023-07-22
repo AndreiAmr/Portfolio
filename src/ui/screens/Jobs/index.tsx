@@ -1,18 +1,21 @@
+import { useState } from 'react';
 import Waves from '@/ui/components/Waves';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import Filters from './components/Filters';
 import Item from './components/Item';
-import AmaggiWeb from '@assets/images/amaggi-web.png';
-import AmaggiMobile from '@assets/images/amaggi-mobile.png';
-import BomFuturoMobile from '@assets/images/bom-futuro-mobile.png';
+import { motion } from 'framer-motion';
+
+import { TypeEnum, jobsItems } from './utils';
 
 const Jobs = () => {
+  const [filter, setFilter] = useState<TypeEnum>(TypeEnum.ALL);
   return (
     <Flex
       width="100%"
       background="background"
       position="relative"
       flexDirection="column"
+      paddingBottom="50px"
     >
       <Flex
         height="25vh"
@@ -22,14 +25,15 @@ const Jobs = () => {
         background="purple.800"
         paddingTop="40px"
         position="relative"
+        mb="-40px"
       >
-        <Text color="white" fontWeight="normal" fontSize="1.5vh">
+        <Text color="gray.50" fontWeight="normal" fontSize="3.3vw" mb="10px">
           Meus Jobs
         </Text>
-        <Text color="white" fontWeight="bold" fontSize="2.5vh">
+        <Text color="white" fontWeight="bold" fontSize="4vw">
           JOBS FEITOS
         </Text>
-        <Filters />
+        <Filters filter={filter} changeFilter={setFilter} />
         <Box position="absolute" bottom="-9vh" width="100%" height="10vh">
           <Waves />
         </Box>
@@ -39,12 +43,31 @@ const Jobs = () => {
         justifyContent="center"
         alignItems="center"
         gap="20px"
-        // my="50px"
         wrap="wrap"
       >
-        <Item imgSrc={AmaggiWeb} />
-        <Item imgSrc={AmaggiMobile} />
-        <Item imgSrc={BomFuturoMobile} />
+        <motion.div
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          exit={{ opacity: 0 }}
+          layout
+          style={{
+            width: '100%',
+            display: 'flex',
+            gap: '20px',
+            flexWrap: 'wrap',
+          }}
+        >
+          {jobsItems.map((prop) => {
+            if (filter === TypeEnum.ALL) {
+              return <Item imgSrc={prop.imgSrc} />;
+            }
+
+            if (prop.type !== filter) {
+              return;
+            }
+            return <Item imgSrc={prop.imgSrc} />;
+          })}
+        </motion.div>
       </Flex>
     </Flex>
   );

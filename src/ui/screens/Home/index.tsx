@@ -2,29 +2,17 @@ import Button from '@/ui/components/Button';
 import { Flex, Text } from '@chakra-ui/react';
 import Photo from './components/Photo';
 import * as S from './animations';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+
+import Typed from 'typed.js';
 
 const Home = () => {
-  const [iamText, setIamText] = useState<string>('Andrei Amaral');
-
-  const toggleIAM = () => {
-    setTimeout(() => {
-      setIamText('Andrei Amaral');
-    }, 0);
-    setTimeout(() => {
-      setIamText('Dev Frontend');
-    }, 3000);
-    setTimeout(() => {
-      setIamText('Dev Mobile');
-    }, 6000);
-    setTimeout(() => {
-      setIamText('Dev NodeJS');
-    }, 9000);
-  };
-
   useEffect(() => {
-    toggleIAM();
-    setInterval(toggleIAM, 12000);
+    new Typed('#i-am-text', {
+      strings: ['Dev Frontend', 'Dev Mobile', 'Andrei Amaral'],
+      typeSpeed: 70,
+      backSpeed: 70,
+    });
   }, []);
 
   return (
@@ -42,20 +30,22 @@ const Home = () => {
         transition="all 0.2s"
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
-          <Text fontSize="4vw">Olá, eu sou</Text>
+          <Text fontSize={['4vw', '4vw', '2.5vw']}>Olá, eu sou</Text>
           <Text
-            fontSize={'8vw'}
+            fontSize={['8vw', '8vw', '6vw']}
             color="purple.800"
-            className="i-am-text"
+            // className="i-am-text"
             textAlign={'left'}
-          >
-            {iamText}
-          </Text>
+            id="i-am-text"
+            height="5vh"
+          ></Text>
           <Text
-            fontSize={'3vw'}
+            fontSize={['3vw', '3vw', '2vw']}
             color="gray.600"
             maxW="75vw"
             textAlign="center"
+            id="small-text"
+            margin={['0', '15px 0 0']}
           >
             Desenvolvedor FullStack com foco no frontend web e mobile.
           </Text>
@@ -70,12 +60,13 @@ const Home = () => {
               labelColor="white"
             />
             <Button
-              bgColor="#D9E3FF"
+              bgColor="transparent"
               label="Meus trabalhos"
               onClick={() => {
                 console.log('meus jobs');
               }}
               labelColor="purple.700"
+              noShadow
             />
           </Flex>
         </Flex>

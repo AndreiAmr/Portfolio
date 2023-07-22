@@ -39,37 +39,37 @@ export const AnimationContainer = styled.div`
 
   @keyframes profile-animation {
     0% {
-      width: 65%;
-      height: 65%;
+      width: 20vh;
+      height: 20vh;
     }
 
     50% {
-      width: 91%;
-      height: 91%;
+      width: 25vh;
+      height: 25vh;
     }
 
     100% {
-      width: 65%;
-      height: 65%;
+      width: 20vh;
+      height: 20vh;
     }
   }
 
   @keyframes profile-animation-after {
     0% {
-      width: 0%;
-      height: 0%;
+      width: 0vh;
+      height: 0vh;
       opacity: 1;
     }
 
     50% {
-      width: 100%;
-      height: 100%;
+      width: 27vh;
+      height: 27vh;
       opacity: 1;
     }
 
     100% {
-      width: 0%;
-      height: 0%;
+      width: 0vh;
+      height: 0vh;
       opacity: 1;
     }
   }

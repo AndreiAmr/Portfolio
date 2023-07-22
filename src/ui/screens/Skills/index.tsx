@@ -21,7 +21,7 @@ const Skills = () => {
       <Text
         color="purple.800"
         marginBottom="8px"
-        fontSize="18px"
+        fontSize="3.3vw"
         fontWeight="semibold"
       >
         Minhas Skills
@@ -32,7 +32,7 @@ const Skills = () => {
         fontWeight="bold"
         width="60vw"
         textAlign="center"
-        fontSize="19px"
+        fontSize="4vw"
       >
         TECNOLOGIAS USADAS & SUAS DESCRIÇÕES
       </Text>

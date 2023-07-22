@@ -1,34 +1,43 @@
 import { Flex, Text } from '@chakra-ui/react';
-import './css.css';
-import { useState } from 'react';
+
+// import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface ItemProps {
   imgSrc: string;
 }
 
 const Item = ({ imgSrc }: ItemProps) => {
-  const [isFocused, setIsFocused] = useState<boolean>(false);
+  // const [isFocused, setIsFocused] = useState<boolean>(false);
 
   return (
-    <Flex
-      width="80vw"
-      maxW="400px"
-      height="20vh"
-      backgroundImage={`url(${imgSrc})`}
-      backgroundPosition="center 10px"
-      backgroundRepeat="no-repeat"
-      backgroundSize="cover"
-      borderRadius={10}
-      position="relative"
-      boxShadow=" 4px 4px 8px 0px rgba(0, 0, 0, 0.25) inset"
-      alignItems="center"
-      justifyContent="center"
-      paddingTop="15px"
-      className="hover"
-      onMouseEnter={() => setIsFocused(true)}
-      onMouseLeave={() => setIsFocused(false)}
-      zIndex={999999}
-      overflow="hidden"
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0, marginTop: 30 }}
+      layout
+      style={{
+        width: '80vw',
+        maxWidth: '400px',
+        height: '20vh',
+        background: '#ffffff20',
+        backgroundImage: `url(${imgSrc})`,
+        backgroundPosition: 'center 10px',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        borderRadius: 10,
+        position: 'relative',
+        boxShadow: ' 4px 4px 8px 0px rgba(0, 0, 0, 0.25) inset',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: '15px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        margin: '0 auto',
+
+        zIndex: 999999,
+        overflow: 'hidden',
+      }}
     >
       <Flex
         position="absolute"
@@ -40,8 +49,8 @@ const Item = ({ imgSrc }: ItemProps) => {
         justifyContent="center"
         paddingX="16px"
         transition="all .3s"
-        transform={isFocused ? 'rotate(0) scale(1)' : 'rotate(3deg) scale(1.2)'}
-        opacity={isFocused ? 1 : 0}
+        // transform={isFocused ? 'rotate(0) scale(1)' : 'rotate(3deg) scale(1.2)'}
+        opacity={0}
         pointerEvents="none"
       >
         <Text color="white" fontSize="2vh" fontWeight="semibold" mt="7%">
@@ -55,7 +64,7 @@ const Item = ({ imgSrc }: ItemProps) => {
           Ver mais
         </Text>
       </Flex>
-    </Flex>
+    </motion.div>
   );
 };
 

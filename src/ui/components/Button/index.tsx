@@ -5,18 +5,27 @@ interface ButtonProps {
   bgColor: string;
   label: string;
   labelColor: string;
+  noShadow?: boolean;
 }
 
-const Button = ({ label, onClick, bgColor, labelColor }: ButtonProps) => {
+const Button = ({
+  label,
+  onClick,
+  bgColor,
+  labelColor,
+  noShadow,
+}: ButtonProps) => {
   return (
     <ChakraButton
       onClick={onClick}
-      width="125px"
-      height={'40px'}
-      borderRadius="20px"
-      backgroundImage={`linear-gradient(145deg, ${bgColor} 70%, #d4e0e6)`}
-      boxShadow="7px 7px 15px #d4e0e6,
-      -7px -7px 15px #ffffff"
+      // width="125px"
+      // height={'40px'}
+      height="3.5vh"
+      borderRadius="10px"
+      background={bgColor}
+      boxShadow={
+        !noShadow ? '7px 7px 15px #d4e0e6, -7px -7px 15px #ffffff' : 'none'
+      }
       _hover={{}}
       _active={{}}
       _focus={{}}

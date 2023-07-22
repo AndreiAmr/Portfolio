@@ -1,6 +1,10 @@
 import { styled } from 'styled-components';
 
 export const AnimationContainer = styled.div`
+  span {
+    display: none;
+  }
+
   .i-am-text {
     position: relative;
     overflow: hidden;

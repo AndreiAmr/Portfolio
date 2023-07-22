@@ -3,15 +3,13 @@ import { Button } from '@chakra-ui/react';
 interface FilterButtonProps {
   label: string;
   active: boolean;
+  onClick: () => void;
 }
 
-const FilterButton = ({ label, active }: FilterButtonProps) => {
+const FilterButton = ({ label, active, onClick }: FilterButtonProps) => {
   return (
     <Button
       background="transparent"
-      borderBottomStyle="solid"
-      borderBottomWidth={active ? '1px' : 'none'}
-      borderBottomColor="yellow.800"
       borderRadius={0}
       padding={0}
       color={active ? 'yellow.800' : 'gray.50'}
@@ -20,6 +18,9 @@ const FilterButton = ({ label, active }: FilterButtonProps) => {
       fontWeight={active ? 'bold' : 'regular'}
       display="inline"
       textAlign="center"
+      onClick={onClick}
+      _active={{}}
+      _hover={{}}
     >
       {label}
     </Button>

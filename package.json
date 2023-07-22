@@ -19,7 +19,10 @@
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.3"
+    "react-icons": "^4.10.1",
+    "react-typed": "^1.2.0",
+    "styled-components": "^6.0.3",
+    "typed.js": "^2.0.16"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
