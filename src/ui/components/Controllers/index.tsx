@@ -22,7 +22,7 @@ const Controllers = () => {
         bottom="20px"
         left="20px"
         gap="13px"
-        zIndex={999}
+        zIndex={999999999}
       >
         <ControllerButton icon={LanguageIcon} />
         <ControllerButton

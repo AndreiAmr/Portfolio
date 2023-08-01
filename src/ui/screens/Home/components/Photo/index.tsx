@@ -24,8 +24,15 @@ const Photo = () => {
           alignItems="flex-end"
           justifyContent="center"
           boxShadow="4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset"
+          overflow="hidden"
         >
-          <Image src={ProfilePicture} />
+          <Image
+            src={ProfilePicture}
+            width="100%"
+            height="100%"
+            // borderRadius="10px"
+            marginBottom="-10px"
+          />
         </Box>
       </Flex>
     </S.AnimationContainer>

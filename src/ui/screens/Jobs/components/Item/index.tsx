@@ -1,34 +1,51 @@
 import { Flex, Text } from '@chakra-ui/react';
-import './css.css';
+
+// import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 interface ItemProps {
   imgSrc: string;
+  onClick: () => void;
+  description: string;
 }
 
-const Item = ({ imgSrc }: ItemProps) => {
+const Item = ({ imgSrc, description, onClick }: ItemProps) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
   return (
-    <Flex
-      width="80vw"
-      maxW="400px"
-      height="20vh"
-      backgroundImage={`url(${imgSrc})`}
-      backgroundPosition="center 10px"
-      backgroundRepeat="no-repeat"
-      backgroundSize="cover"
-      borderRadius={10}
-      position="relative"
-      boxShadow=" 4px 4px 8px 0px rgba(0, 0, 0, 0.25) inset"
-      alignItems="center"
-      justifyContent="center"
-      paddingTop="15px"
-      className="hover"
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0, marginTop: 30 }}
+      layout
+      style={{
+        width: '90vw',
+        maxWidth: '500px',
+        height: '21vh',
+
+        background: '#ffffff20',
+        backgroundImage: `url(${imgSrc})`,
+        backgroundPosition: 'center -5px',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        borderRadius: 10,
+        position: 'relative',
+        boxShadow: ' 4px 4px 8px 0px rgba(0, 0, 0, 0.25) inset',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: '15px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        // margin: '0 auto',
+
+        zIndex: 999999,
+        overflow: 'hidden',
+        cursor: 'pointer',
+      }}
       onMouseEnter={() => setIsFocused(true)}
       onMouseLeave={() => setIsFocused(false)}
-      zIndex={999999}
-      overflow="hidden"
+      onClick={onClick}
     >
       <Flex
         position="absolute"
@@ -48,14 +65,14 @@ const Item = ({ imgSrc }: ItemProps) => {
           Agrosig
         </Text>
         <Text color="gray.500" fontSize="1.8vh" fontWeight="regular">
-          Ipsum, mas a maioria sofreu algum tipo de alteração, seja por inserção
+          {description.slice(0, 100)}...
         </Text>
 
         <Text color="yellow.800" fontSize="1.8vh" fontWeight="regular" mt="10%">
           Ver mais
         </Text>
       </Flex>
-    </Flex>
+    </motion.div>
   );
 };
 

@@ -18,7 +18,8 @@ const Experience = ({
   return (
     <Flex
       width="95vw"
-      maxWidth="450px"
+      // maxWidth="450px"
+      maxWidth={['450px', '450px', '450px', '650px']}
       background="linear-gradient(145deg, #d4e0e6, #fdffff)"
       borderRadius="25px"
       my="10px"
@@ -27,13 +28,24 @@ const Experience = ({
       justifyItems="center"
       boxShadow=" 20px 20px 60px #c9d4d9,
       -20px -20px 60px #ffffff"
+      _hover={{
+        boxShadow: ` boxShadow="20px 20px 10px #d4d4d4, -20px -20px 60px #ffffff"`,
+        transform: 'translateY(-20px) rotate(-2deg)',
+        '.rotate': {
+          transform: ' translateX(10px) rotate(-20deg)',
+        },
+      }}
     >
-      <Flex>
+      <Flex className="rotate" transform="scale(0.9)">
         <Percentage color={color} percentage={percentage} />
       </Flex>
 
       <Flex flexDirection="column" marginLeft="33px" alignItems="flex-start">
-        <Text fontSize="3vh" fontWeight="semibold">
+        <Text
+          fontSize={['3vh', '3vh', '2.5vh']}
+          mb="0.8vh"
+          fontWeight="semibold"
+        >
           {title}
         </Text>
         <Text
