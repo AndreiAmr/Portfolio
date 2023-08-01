@@ -1,54 +1,68 @@
+import Button from '@/ui/components/Button';
+
 import Input from '@/ui/components/Input';
 import TextArea from '@/ui/components/TextArea';
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
+import { Fade, Zoom } from 'react-awesome-reveal';
 
 const Contact = () => {
   return (
     <Flex
       width="100%"
+      // minHeight="75vh"
+      height={['none', 'none', 'none', '75vh']}
+      py="5vh"
       background="blue.600"
       flexDir="column"
       justifyContent="center"
-      padding="40px 48px"
+      id="contact-container"
+      position="relative"
     >
-      <Text
-        textAlign="center"
-        color="purple.800"
-        fontWeight="semibold"
-        fontSize="3.3vw"
-        marginBottom="10px"
-      >
-        Entre em contato
-      </Text>
-      <Text
-        textAlign="center"
-        color="gray.700"
-        fontWeight="bold"
-        fontSize="4vw"
-      >
-        Alguma dúvida ? Sinta-se a vontade para me contatar
-      </Text>
+      <Fade cascade>
+        <Text
+          textAlign="center"
+          color="purple.800"
+          fontWeight="semibold"
+          fontSize={['3.3vw', '3.3vw', '3.3vw', '26px']}
+          marginBottom="10px"
+        >
+          Entre em contato
+        </Text>
+        <Text
+          textAlign="center"
+          color="gray.700"
+          fontWeight="bold"
+          fontSize={['4vw', '4vw', '4vw', '36px']}
+          mb="4vh"
+        >
+          Alguma dúvida ? Sinta-se a vontade para me contatar
+        </Text>
+      </Fade>
 
-      <Flex mt="4vh" flexDirection="column" gap="19px">
-        <Input placeholder="Nome" />
-        <Input placeholder="E-mail" />
-        <Input placeholder="Telefone" />
-        <Input placeholder="Título" />
-        <TextArea />
+      <Flex
+        mt="4vh"
+        gap="19px"
+        maxWidth="1500px"
+        // alignItems="center"
+        justifyContent="center"
+        margin="0 auto"
+        wrap="wrap"
+      >
+        <Zoom cascade duration={500}>
+          <Input placeholder="Nome" />
+          <Input placeholder="E-mail" />
+          <Input placeholder="Telefone" />
+          <Input placeholder="Título" />
+          <TextArea />
+        </Zoom>
+      </Flex>
+      <Flex justifyContent="flex-end" width="90vw" maxW="1320px" mt="2vh">
         <Button
           bgColor="yellow.800"
+          label="Enviar e-mail"
+          labelColor="white"
           onClick={() => {}}
-          color="white"
-          borderRadius="10px"
-          backgroundImage="linear-gradient(145deg, #ffcc44, #e6ac3a)"
-          boxShadow="9px 9px 17px #c9d4d9,
-          -9px -9px 17px #ffffff"
-          _active={{ opacity: 0.7 }}
-          _focus={{}}
-          _hover={{}}
-        >
-          Enviar
-        </Button>
+        />
       </Flex>
     </Flex>
   );

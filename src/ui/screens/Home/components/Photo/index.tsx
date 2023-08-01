@@ -28,8 +28,8 @@ const Photo = () => {
         >
           <Image
             src={ProfilePicture}
-            width="80%"
-            height="80%"
+            width="100%"
+            height="100%"
             // borderRadius="10px"
             marginBottom="-10px"
           />

@@ -18,13 +18,13 @@ const Footer = () => {
       paddingTop="40px"
     >
       <Flex>
-        <Text color="yellow.800" fontSize="4vw">
+        <Text color="yellow.800" fontSize={['4vw', '4vw', '4vw', '36px']}>
           {'<'}
         </Text>
-        <Text color="white" fontSize="4vw">
+        <Text color="white" fontSize={['4vw', '4vw', '4vw', '36px']}>
           Andrei Amaral
         </Text>
-        <Text color="yellow.800" fontSize="4vw">
+        <Text color="yellow.800" fontSize={['4vw', '4vw', '4vw', '36px']}>
           /{'>'}
         </Text>
       </Flex>
@@ -35,7 +35,13 @@ const Footer = () => {
         <SocialButton icon={<BsWhatsapp />} color="green.800" />
       </Flex>
 
-      <Flex flexDirection="column" width="80vw" my="5vh" gap="35px">
+      <Flex
+        width="80vw"
+        my="5vh"
+        gap="35px"
+        wrap="wrap"
+        justifyContent="center"
+      >
         <Info
           title="Endereço"
           description="Brasil - São Paulo/SP"
@@ -47,13 +53,24 @@ const Footer = () => {
           iconSrc={PhoneIcon}
         />
         <Info
-          title="Telefone"
-          description="(+55) 11 98101-5103"
+          title="E-mail"
+          description="andreiamaral74@gmail.com"
           iconSrc={EmailIcon}
         />
       </Flex>
-      <Flex borderTop="1px solid white" width="100%" mb="20px">
-        <Text textAlign="center" width="100%" mt="30px" color="white">
+      <Flex
+        borderTop="1px solid white"
+        width="100%"
+        background="blue.600"
+        flex={1}
+        p="20px"
+      >
+        <Text
+          textAlign="center"
+          width="100%"
+          color="purple.800"
+          fontWeight="semibold"
+        >
           Desenvolvido com ReactJS por Andrei Amaral
         </Text>
       </Flex>

@@ -26,7 +26,7 @@ const BackToTop = () => {
         aria-label="back-top-icon"
         id="back-to-top"
         icon={<Image w="20px" src={UpIcon} />}
-        zIndex={99}
+        zIndex={999999999999999999999999999}
         _focus={{}}
         _active={{
           opacity: 0.7,

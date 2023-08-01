@@ -3,6 +3,8 @@ import { Box, Textarea } from '@chakra-ui/react';
 export const TextArea = () => {
   return (
     <Box
+      width="80vw"
+      maxWidth="500px"
       backgroundImage="linear-gradient(145deg, blue.700, #ffffff)"
       boxShadow="2px 2px 17px #cccfd950, -2px -2px 17px #ffffff50"
       borderRadius="10px"
@@ -17,6 +19,7 @@ export const TextArea = () => {
       _focus={{
         boxShadow: ' 9px 9px 13px #cccfd9,-9px -9px 13px #ffffff',
       }}
+      height="200px"
     >
       <Textarea
         placeholder="Mensagem"
@@ -24,6 +27,9 @@ export const TextArea = () => {
         outline="none"
         border="none"
         autoComplete="none"
+        fontSize={['3.2vw', '3.2vw', '3.2vw', '16px']}
+        height="100% !important"
+        padding="20px"
       />
     </Box>
   );

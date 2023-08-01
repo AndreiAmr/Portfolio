@@ -2,13 +2,16 @@ import { Flex, Text } from '@chakra-ui/react';
 
 // import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface ItemProps {
   imgSrc: string;
+  onClick: () => void;
+  description: string;
 }
 
-const Item = ({ imgSrc }: ItemProps) => {
-  // const [isFocused, setIsFocused] = useState<boolean>(false);
+const Item = ({ imgSrc, description, onClick }: ItemProps) => {
+  const [isFocused, setIsFocused] = useState<boolean>(false);
 
   return (
     <motion.div
@@ -17,12 +20,13 @@ const Item = ({ imgSrc }: ItemProps) => {
       exit={{ opacity: 0, marginTop: 30 }}
       layout
       style={{
-        width: '80vw',
-        maxWidth: '400px',
-        height: '20vh',
+        width: '90vw',
+        maxWidth: '500px',
+        height: '21vh',
+
         background: '#ffffff20',
         backgroundImage: `url(${imgSrc})`,
-        backgroundPosition: 'center 10px',
+        backgroundPosition: 'center -5px',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         borderRadius: 10,
@@ -33,11 +37,15 @@ const Item = ({ imgSrc }: ItemProps) => {
         paddingTop: '15px',
         display: 'flex',
         flexWrap: 'wrap',
-        margin: '0 auto',
+        // margin: '0 auto',
 
         zIndex: 999999,
         overflow: 'hidden',
+        cursor: 'pointer',
       }}
+      onMouseEnter={() => setIsFocused(true)}
+      onMouseLeave={() => setIsFocused(false)}
+      onClick={onClick}
     >
       <Flex
         position="absolute"
@@ -49,15 +57,15 @@ const Item = ({ imgSrc }: ItemProps) => {
         justifyContent="center"
         paddingX="16px"
         transition="all .3s"
-        // transform={isFocused ? 'rotate(0) scale(1)' : 'rotate(3deg) scale(1.2)'}
-        opacity={0}
+        transform={isFocused ? 'rotate(0) scale(1)' : 'rotate(3deg) scale(1.2)'}
+        opacity={isFocused ? 1 : 0}
         pointerEvents="none"
       >
         <Text color="white" fontSize="2vh" fontWeight="semibold" mt="7%">
           Agrosig
         </Text>
         <Text color="gray.500" fontSize="1.8vh" fontWeight="regular">
-          Ipsum, mas a maioria sofreu algum tipo de alteração, seja por inserção
+          {description.slice(0, 100)}...
         </Text>
 
         <Text color="yellow.800" fontSize="1.8vh" fontWeight="regular" mt="10%">

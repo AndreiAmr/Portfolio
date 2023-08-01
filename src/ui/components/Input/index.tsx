@@ -6,6 +6,8 @@ interface InputProps {
 const Input = ({ placeholder }: InputProps) => {
   return (
     <Box
+      width="80vw"
+      maxWidth="500px"
       backgroundImage="linear-gradient(145deg, blue.700, #ffffff)"
       boxShadow="2px 2px 17px #cccfd950, -2px -2px 17px #ffffff50"
       borderRadius="10px"
@@ -25,6 +27,7 @@ const Input = ({ placeholder }: InputProps) => {
       <ChakraInput
         outline="none"
         border="none"
+        fontSize={['3vw', '3vw', '3vw', '16px']}
         background="none"
         placeholder={placeholder}
         _active={{
@@ -35,6 +38,7 @@ const Input = ({ placeholder }: InputProps) => {
         }}
         height="100%"
         width="100%"
+        padding="10px 20px "
       />
     </Box>
   );
