@@ -25,7 +25,7 @@ const Header = () => {
       right={0}
       paddingX="14px"
       position={fixed ? 'fixed' : 'relative'}
-      zIndex={3}
+      zIndex={999}
       transition="all .5s"
       justifyContent="center"
       pointerEvents="none"

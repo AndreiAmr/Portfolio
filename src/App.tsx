@@ -1,4 +1,5 @@
-import './app.css';
+import { useEffect } from 'react';
+
 import PackagesProvider from './infra/packages';
 import Header from '@/ui/components/Header';
 import Home from '@/ui/screens/Home';
@@ -9,8 +10,15 @@ import Skills from '@/ui/screens/Skills';
 import Jobs from '@/ui/screens/Jobs';
 import Contact from './ui/screens/Contact';
 import Footer from './ui/screens/Footer';
+import emailjs from '@emailjs/browser';
+
+import './app.css';
 
 function App() {
+  useEffect(() => {
+    emailjs.init('K95gmFDJJTv7hY7F1');
+  }, []);
+
   return (
     <ControllerContextProvider>
       <PackagesProvider>

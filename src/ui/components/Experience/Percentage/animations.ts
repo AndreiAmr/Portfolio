@@ -20,7 +20,8 @@ export const AnimationBar = styled.div<{ deg: number; color: string }>`
     position: absolute;
     height: calc(12vh - 6px);
     width: calc(12vh - 6px);
-    background-image: linear-gradient(145deg, #d4e0e6, #fdffff);
+    background-image: ${({ theme }) =>
+      `linear-gradient(145deg, ${theme.blue[400]}, ${theme.white})`};
     border-radius: 50%;
   }
 `;

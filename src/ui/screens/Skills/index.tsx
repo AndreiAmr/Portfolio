@@ -12,6 +12,13 @@ const Skills = () => {
     items: { theme },
   } = useContext(ControllerContext);
 
+  const {
+    items: {
+      isAnimating,
+      currentLanguage: { skills },
+    },
+  } = useContext(ControllerContext);
+
   useEffect(() => {
     const element = document.getElementById('skills-container');
     console.log(element?.offsetTop);
@@ -33,8 +40,9 @@ const Skills = () => {
           marginBottom="8px"
           fontSize={['3.3vw', '3.3vw', '3.3vw', '26px']}
           fontWeight="semibold"
+          className={`${isAnimating && 'change-animate'}`}
         >
-          Minhas Skills
+          {skills.title}
         </Text>
         <Text
           marginBottom="48px"
@@ -43,8 +51,9 @@ const Skills = () => {
           width="60vw"
           textAlign="center"
           fontSize={['4vw', '4vw', '4vw', '36px']}
+          className={`${isAnimating && 'change-animate'}`}
         >
-          TECNOLOGIAS USADAS & SUAS DESCRIÇÕES
+          {skills.subtitle}
         </Text>
       </Fade>
       <Flex
@@ -60,26 +69,30 @@ const Skills = () => {
           <Experience
             color={getColor('yellow', theme === ThemeEnum.dark)}
             title="React JS"
-            description="There are many variations of passages of Lorem Ipsum available. many"
+            description={skills.cards.reactJS}
             percentage={95}
+            isAnimating={isAnimating}
           />
           <Experience
             color={getColor('green', theme === ThemeEnum.dark)}
             title="React Native"
-            description="There are many variations of passages of Lorem Ipsum available. many"
+            description={skills.cards.reactNative}
             percentage={89}
+            isAnimating={isAnimating}
           />
           <Experience
             color={getColor('purple', theme === ThemeEnum.dark)}
             title="Node JS"
-            description="There are many variations of passages of Lorem Ipsum available. many"
+            description={skills.cards.nodeJS}
             percentage={80}
+            isAnimating={isAnimating}
           />
           <Experience
             color={getColor('blue', theme === ThemeEnum.dark)}
             title="SQL"
-            description="There are many variations of passages of Lorem Ipsum available. many"
+            description={skills.cards.sql}
             percentage={85}
+            isAnimating={isAnimating}
           />
         </Zoom>
       </Flex>
@@ -88,7 +101,7 @@ const Skills = () => {
         <Bounce delay={1000}>
           <Button
             bgColor="yellow.800"
-            label="Ver mais skills"
+            label={skills.SeeMore}
             labelColor="white"
             onClick={() => {
               console.log('test');

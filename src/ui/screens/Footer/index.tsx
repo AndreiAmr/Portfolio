@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Flex, Text } from '@chakra-ui/react';
 import SocialButton from './components/SocialButton';
 import { BsGithub, BsWhatsapp } from 'react-icons/bs';
@@ -7,8 +8,13 @@ import Info from './components/Info';
 import LocationIcon from '@assets/icons/location.svg';
 import PhoneIcon from '@assets/icons/phone-icon.svg';
 import EmailIcon from '@assets/icons/email.svg';
+import { ControllerContext } from '@/infra/contexts/Controllers.context';
 
 const Footer = () => {
+  const {
+    items: { isAnimating },
+  } = useContext(ControllerContext);
+
   return (
     <Flex
       background="purple.800"
@@ -67,9 +73,11 @@ const Footer = () => {
       >
         <Text
           textAlign="center"
-          width="100%"
+          margin="0 auto"
           color="purple.800"
           fontWeight="semibold"
+          className={`${isAnimating && 'change-animate'}`}
+          display="inline"
         >
           Desenvolvido com ReactJS por Andrei Amaral
         </Text>

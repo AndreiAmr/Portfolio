@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { ControllerContext } from '@/infra/contexts/Controllers.context';
 import { Button, Flex, Image, Text, useToast } from '@chakra-ui/react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { RxCopy } from 'react-icons/rx';
@@ -10,6 +12,9 @@ interface InfoProps {
 
 const Info = ({ description, iconSrc, title }: InfoProps) => {
   const toast = useToast();
+  const {
+    items: { isAnimating },
+  } = useContext(ControllerContext);
 
   return (
     <CopyToClipboard text={description}>
@@ -73,6 +78,7 @@ const Info = ({ description, iconSrc, title }: InfoProps) => {
                 color="white"
                 opacity={0.6}
                 fontSize={['1.2vh', '1.2vh', '1.2vh', '16px']}
+                className={`${isAnimating && 'change-animate'}`}
               >
                 {title}
               </Text>

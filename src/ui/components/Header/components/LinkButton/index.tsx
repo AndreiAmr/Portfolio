@@ -1,5 +1,6 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useContext } from 'react';
 import { Button, Text } from '@chakra-ui/react';
+import { ControllerContext } from '@/infra/contexts/Controllers.context';
 
 interface LinkButtonProps extends PropsWithChildren {
   onClick: () => void;
@@ -7,6 +8,10 @@ interface LinkButtonProps extends PropsWithChildren {
 }
 
 const LinkButton = ({ children, onClick, active }: LinkButtonProps) => {
+  const {
+    items: { isAnimating },
+  } = useContext(ControllerContext);
+
   return (
     <Button onClick={onClick} bg="none">
       <Text
@@ -23,6 +28,7 @@ const LinkButton = ({ children, onClick, active }: LinkButtonProps) => {
         }}
         transition="all .5s"
         fontSize={['1.1rem']}
+        className={`${isAnimating && 'change-animate'}`}
       >
         {children}
       </Text>

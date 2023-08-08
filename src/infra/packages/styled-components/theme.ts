@@ -18,6 +18,7 @@ const lightTheme: DefaultTheme = {
   // ECF9FF
 
   blue: {
+    400: '#d4e0e6',
     500: '#3C394D',
     600: '#F0F4FF',
     700: '#EDF7FF',
@@ -33,7 +34,7 @@ const lightTheme: DefaultTheme = {
 
 const styledDarkTheme: DefaultTheme = {
   background: '#2C2C31',
-  white: '#Fff',
+  white: '#3C394D',
 
   purple: {
     600: '#A57EFF',
@@ -48,6 +49,7 @@ const styledDarkTheme: DefaultTheme = {
   },
 
   blue: {
+    400: '#1F1F23',
     500: '#3C394D',
     600: '#1F1F23',
     700: '#1F1F23',

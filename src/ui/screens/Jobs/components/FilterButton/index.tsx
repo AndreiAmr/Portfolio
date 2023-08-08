@@ -1,12 +1,18 @@
-import { Button } from '@chakra-ui/react';
+import { Button, Text } from '@chakra-ui/react';
 
 interface FilterButtonProps {
   label: string;
   active: boolean;
   onClick: () => void;
+  isAnimating?: boolean;
 }
 
-const FilterButton = ({ label, active, onClick }: FilterButtonProps) => {
+const FilterButton = ({
+  label,
+  active,
+  onClick,
+  isAnimating,
+}: FilterButtonProps) => {
   return (
     <Button
       background="transparent"
@@ -24,7 +30,7 @@ const FilterButton = ({ label, active, onClick }: FilterButtonProps) => {
       _hover={{}}
       opacity={active ? 1 : 0.7}
     >
-      {label}
+      <Text className={`${isAnimating && 'change-animate'}`}>{label}</Text>
     </Button>
   );
 };

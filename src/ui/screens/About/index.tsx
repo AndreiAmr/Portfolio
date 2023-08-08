@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import Service from '@/ui/components/Service';
 import { Flex, Text } from '@chakra-ui/react';
 import DevelopmentIcon from '@assets/images/development.png';
@@ -7,27 +8,43 @@ import WebDesign from '@assets/images/web-design.png';
 import Button from '@/ui/components/Button';
 import { Fade, Zoom, Bounce } from 'react-awesome-reveal';
 import * as S from './animations';
+import { ControllerContext } from '@/infra/contexts/Controllers.context';
+import jsFileDownload from 'js-file-download';
+import Curriculum from '@assets/curriculum.pdf';
 
 const About = () => {
+  const {
+    items: {
+      isAnimating,
+      currentLanguage: { about },
+    },
+  } = useContext(ControllerContext);
+
+  const handleDownloadCurriculum = () => {
+    const link = document.createElement('a');
+    link.href = Curriculum;
+    link.download = 'Andrei-Amaral-Curriculo';
+    link.dispatchEvent(new MouseEvent('click'));
+  };
+
   return (
     <S.Container id="about-screen">
       <Flex
         flexDirection="column"
         alignItems="center"
-        flex={1}
         background="background"
         paddingTop={['3vh', '3vh', '3vh', '5vh']}
         padding="24px"
         overflow="hidden"
-        position="relative"
       >
         <Fade duration={500} cascade>
           <Text
             color="purple.800"
             fontSize={['3.3vw', '3.3vw', '3.3vw', '26px']}
             fontWeight="semibold"
+            className={`${isAnimating && 'change-animate'}`}
           >
-            Minha especialidade
+            {about.title}
           </Text>
           <Text
             maxW="675px"
@@ -36,8 +53,9 @@ const About = () => {
             mt="12px"
             fontSize={['4vw', '4vw', '4vw', '36px']}
             marginBottom="30px"
+            className={`${isAnimating && 'change-animate'}`}
           >
-            COM AMPLA EXPERIENCIA EM SERVIÇOS DIGITAIS
+            {about.subtitle}
           </Text>
         </Fade>
 
@@ -53,23 +71,23 @@ const About = () => {
           <Zoom delay={500} duration={500} cascade>
             <Service
               icon={DevelopmentIcon}
-              title="Web Development"
-              description="There are many variations of passages of Lorem Ipsum available.  many variations of passages of Lorem Ipsum available."
+              title={about.cards.web}
+              description={about.cards.webDescription}
             />
             <Service
               icon={AppDev}
-              title="App Development"
-              description="There are many variations of passages of Lorem Ipsum available.  many variations of passages of Lorem Ipsum available."
+              title={about.cards.app}
+              description={about.cards.appDescription}
             />
             <Service
               icon={UiUx}
-              title="Ui/Ux Desing"
-              description="There are many variations of passages of Lorem Ipsum available.  many variations of passages of Lorem Ipsum available."
+              title={about.cards.ui}
+              description={about.cards.uiDescription}
             />
             <Service
               icon={WebDesign}
-              title="Web Design"
-              description="There are many variations of passages of Lorem Ipsum available.  many variations of passages of Lorem Ipsum available."
+              title={about.cards.webDesign}
+              description={about.cards.webDesignDescription}
             />
           </Zoom>
         </Flex>
@@ -85,11 +103,9 @@ const About = () => {
           <Bounce delay={1000}>
             <Button
               bgColor="yellow.800"
-              label="Baixar curriculo"
+              label={about.downloadCurriculum}
               labelColor="white"
-              onClick={() => {
-                console.log('BAIXAR');
-              }}
+              onClick={handleDownloadCurriculum}
             />
           </Bounce>
         </Flex>

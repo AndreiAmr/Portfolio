@@ -22,6 +22,7 @@ export interface JobItemProps {
   imgSrc: string;
   type: TypeEnum;
   techs: GetTechIconProp[];
+  paddingTop?: boolean;
 }
 
 export const filtersOptions: FilterProp[] = [
@@ -33,13 +34,26 @@ export const filtersOptions: FilterProp[] = [
     type: TypeEnum.WORK,
     label: 'Empresarial',
   },
-  {
-    type: TypeEnum.PERSONAL,
-    label: 'Pessoal',
-  },
+
   {
     type: TypeEnum.HOSPITAL,
     label: 'Hospitalar',
+  },
+];
+
+export const filtersOptionsEnglish: FilterProp[] = [
+  {
+    type: TypeEnum.AGRIBUSINESS,
+    label: 'Agribusiness',
+  },
+  {
+    type: TypeEnum.WORK,
+    label: 'Business',
+  },
+
+  {
+    type: TypeEnum.HOSPITAL,
+    label: 'Hospital',
   },
 ];
 
@@ -53,6 +67,7 @@ export const jobsItems: JobItemProps[] = [
     ],
 
     imgSrc: AmaggiWeb,
+
     type: TypeEnum.AGRIBUSINESS,
     techs: [
       'reactJS',
@@ -93,6 +108,7 @@ export const jobsItems: JobItemProps[] = [
       'android',
       'apple',
     ],
+    paddingTop: true,
   },
 
   {
@@ -119,5 +135,88 @@ export const jobsItems: JobItemProps[] = [
       'android',
       'apple',
     ],
+    paddingTop: true,
+  },
+];
+
+export const jobsItemsEnglish: JobItemProps[] = [
+  {
+    title: 'Agrosig WEB - Amaggi',
+    description: [
+      'System developed in order to help the administration of farms. Being able to visualize different thematic maps, dates of operations, accumulated rain, satellite images.',
+      'My role was to develop new features such as thematic maps, graphics, user control, editing polygons (change, delete, add) existing on the map according to the selected period. ',
+      'KML file imports for mass addition and alteration of existing polygons on the map according to the selected period.',
+    ],
+
+    imgSrc: AmaggiWeb,
+
+    type: TypeEnum.AGRIBUSINESS,
+    techs: [
+      'reactJS',
+      'typescript',
+      'styledComponenets',
+      'jest',
+      'firebase',
+      'chakraUI',
+      'azureDevops',
+      'redux',
+      'figma',
+      'adobeXD',
+      'googleMaps',
+      'github',
+      'html',
+      'css',
+    ],
+  },
+  {
+    title: 'Agrosig MOBILE - Amaggi',
+    description: [
+      'This application was developed in order to assist the administration of farms. Being able to visualize dates of operations, accumulated rain, satellite images among other functionalities.',
+    ],
+    imgSrc: AmaggiMobile,
+    type: TypeEnum.HOSPITAL,
+    techs: [
+      'reactNative',
+      'typescript',
+      'styledComponenets',
+      'jest',
+      'firebase',
+      'azureDevops',
+      'redux',
+      'figma',
+      'adobeXD',
+      'googleMaps',
+      'github',
+      'android',
+      'apple',
+    ],
+    paddingTop: true,
+  },
+
+  {
+    title: 'Agrosig Mobile - Bom Futuro',
+    description: [
+      'Application developed for managing farm data in offline mode. Synchronizing first the information he wants to have access to (year, occupation, variety), so he can browse offline while there is no signal on the farm.',
+
+      'You can also view information such as accumulated rain, planting and harvesting date, harvest forecast, start and end date of emergencies, costs in farms and specific fields.',
+    ],
+    imgSrc: BomFuturoMobile,
+    type: TypeEnum.WORK,
+    techs: [
+      'reactNative',
+      'typescript',
+      'styledComponenets',
+      'jest',
+      'firebase',
+      'azureDevops',
+      'redux',
+      'figma',
+      'adobeXD',
+      'mapbox',
+      'github',
+      'android',
+      'apple',
+    ],
+    paddingTop: true,
   },
 ];

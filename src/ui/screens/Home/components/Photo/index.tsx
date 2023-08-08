@@ -13,10 +13,11 @@ const Photo = () => {
         alignItems="center"
         marginTop="33px"
         className="perfil-animation-1"
+        // border="1px solid black"
       >
         <Box
-          width={['22vh', '21vh']}
-          height={['22vh', '21vh']}
+          width={['22vh', '22vh', '22vh', '22vh', '23vh']}
+          height={['22vh', '22vh', '22vh', '22vh', '23vh']}
           borderRadius="50%"
           background="purple.700"
           zIndex={2}

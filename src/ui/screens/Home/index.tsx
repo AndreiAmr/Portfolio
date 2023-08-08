@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { Flex, Text, Tooltip } from '@chakra-ui/react';
 import Button from '@/ui/components/Button';
 import Typed from 'typed.js';
@@ -7,8 +7,16 @@ import { Fade, Zoom, Bounce } from 'react-awesome-reveal';
 
 import Photo from './components/Photo';
 import * as S from './animations';
+import { ControllerContext } from '@/infra/contexts/Controllers.context';
 
 const Home = () => {
+  const {
+    items: {
+      isAnimating,
+      currentLanguage: { home },
+    },
+  } = useContext(ControllerContext);
+
   const handleGoToJobs = () => {
     const jobsElement = document.getElementById('jobs-container');
     const jobsContainerTop = jobsElement?.getBoundingClientRect().top;
@@ -35,7 +43,7 @@ const Home = () => {
 
   useEffect(() => {
     new Typed('#i-am-text', {
-      strings: ['Dev Frontend', 'Dev Mobile', 'Andrei Amaral'],
+      strings: home.nameAndFunction,
       typeSpeed: 70,
       backSpeed: 70,
     });
@@ -73,8 +81,11 @@ const Home = () => {
           >
             <Fade cascade big>
               <Tooltip label="Hey, I'm here!" aria-label="A tooltip">
-                <Text fontSize={['4vw', '4vw', '2.5vw', '30px']}>
-                  Olá, eu sou
+                <Text
+                  fontSize={['4vw', '4vw', '2.5vw', '30px']}
+                  className={`${isAnimating && 'change-animate'}`}
+                >
+                  {home.grettings}
                 </Text>
               </Tooltip>
               <Text
@@ -85,6 +96,7 @@ const Home = () => {
                 id="i-am-text"
                 height={['5vh', '5vh', '5vh', '5vh', '8vh']}
                 fontWeight="bold"
+                className={`${isAnimating && 'change-animate'}`}
               ></Text>
               <Text
                 fontSize={['3vw', '3vw', '2vw', '30px']}
@@ -94,16 +106,17 @@ const Home = () => {
                 id="small-text"
                 margin={['0', '2vh 0 0', '5% 0 0']}
                 maxWidth="800px"
+                className={`${isAnimating && 'change-animate'}`}
               >
-                Desenvolvedor FullStack com foco no frontend web e mobile.
+                {home.myJobDescription}
               </Text>
             </Fade>
 
-            <Flex marginTop="33px" gap="30px">
+            <Flex marginTop="33px" gap="30px" mb="30px">
               <Bounce delay={1000} duration={500}>
                 <Button
                   bgColor="yellow.800"
-                  label="Contrate-me"
+                  label={home.contactMe}
                   onClick={handleGoToContact}
                   labelColor="white"
                 />
@@ -111,7 +124,7 @@ const Home = () => {
               <Bounce delay={1250} duration={500}>
                 <Button
                   bgColor="transparent"
-                  label="Meus trabalhos"
+                  label={home.myJobs}
                   onClick={handleGoToJobs}
                   labelColor="purple.700"
                 />

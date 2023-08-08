@@ -21,54 +21,27 @@ const useMenu = () => {
   };
 
   const handleGoToAbout = () => {
-    const aboutScreenTop = document
-      .getElementById('about-screen')
-      ?.getBoundingClientRect().top;
-
-    if (aboutScreenTop) {
-      window.scrollTo({
-        top: aboutScreenTop! - 64,
-        behavior: 'smooth',
-      });
-    }
+    document.getElementById('about-screen')?.scrollIntoView({
+      behavior: 'smooth',
+      // block: 'start',
+    });
   };
 
   const handleGoToSkills = () => {
-    const skillsScreenTop = document
-      .getElementById('skills-container')
-      ?.getBoundingClientRect().top;
-
-    if (skillsScreenTop) {
-      window.scrollTo({
-        top: skillsScreenTop!,
-        behavior: 'smooth',
-      });
-    }
+    document.getElementById('skills-container')?.scrollIntoView({
+      behavior: 'smooth',
+    });
   };
 
   const handleGoToServices = () => {
-    const jobsScreenTop = document
-      .getElementById('jobs-container')
-      ?.getBoundingClientRect().top;
-
-    if (jobsScreenTop) {
-      window.scrollTo({
-        top: jobsScreenTop! - 64,
-        behavior: 'smooth',
-      });
-    }
+    document.getElementById('jobs-container')?.scrollIntoView({
+      behavior: 'smooth',
+    });
   };
   const handleGoToContact = () => {
-    const contactScreenTop = document
-      .getElementById('contact-container')
-      ?.getBoundingClientRect().top;
-
-    if (contactScreenTop) {
-      window.scrollTo({
-        top: contactScreenTop! - 64,
-        behavior: 'smooth',
-      });
-    }
+    document.getElementById('contact-container')?.scrollIntoView({
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {

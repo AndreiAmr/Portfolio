@@ -1,7 +1,6 @@
 import { styled } from 'styled-components';
 
 export const AnimationContainer = styled.div`
-  position: relative;
   span {
     display: none;
   }
