@@ -9,7 +9,6 @@ import Button from '@/ui/components/Button';
 import { Fade, Zoom, Bounce } from 'react-awesome-reveal';
 import * as S from './animations';
 import { ControllerContext } from '@/infra/contexts/Controllers.context';
-import jsFileDownload from 'js-file-download';
 import Curriculum from '@assets/curriculum.pdf';
 
 const About = () => {

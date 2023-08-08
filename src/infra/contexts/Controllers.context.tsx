@@ -6,7 +6,6 @@ import {
   ThemeEnum,
 } from './types';
 import { english, portugues } from './languages';
-import * as languages from './languages';
 
 const ControllerContext = createContext<ControllersContextProps>({
   items: {

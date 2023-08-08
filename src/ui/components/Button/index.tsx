@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ControllerContext } from '@/infra/contexts/Controllers.context';
-import { Button as ChakraButton, Text } from '@chakra-ui/react';
+import { Button as ChakraButton } from '@chakra-ui/react';
 
 interface ButtonProps {
   onClick: () => void;
