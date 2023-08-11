@@ -1,24 +1,16 @@
 import { useState, useContext, useCallback } from 'react';
 import Waves from '@/ui/components/Waves';
-import {
-  Box,
-  Flex,
-  Modal,
-  ModalContent,
-  ModalOverlay,
-  Text,
-  Tooltip,
-  useDisclosure,
-} from '@chakra-ui/react';
+import { Box, Flex, Text, useDisclosure } from '@chakra-ui/react';
 import Filters from './components/Filters';
 import Item from './components/Item';
 import { motion } from 'framer-motion';
 import { Fade } from 'react-awesome-reveal';
 
 import { JobItemProps, TypeEnum, jobsItems, jobsItemsEnglish } from './utils';
-import { getTechIcon } from '@/infra/helpers/tech-icons';
+
 import { ControllerContext } from '@/infra/contexts/Controllers.context';
 import { LanguageEnum } from '@/infra/contexts/types';
+import JobModal from './components/JobModal';
 
 const Jobs = () => {
   const [filter, setFilter] = useState<TypeEnum>(TypeEnum.ALL);
@@ -184,65 +176,7 @@ const Jobs = () => {
           </motion.div>
         </Flex>
       </Flex>
-      <Modal isOpen={isOpen} onClose={onClose} isCentered>
-        <ModalOverlay />
-        <ModalContent
-          width="90%"
-          maxW="1000px"
-          // pt="25px"
-          background="background"
-        >
-          <Box
-            width="100%"
-            backgroundImage={currentJob?.imgSrc}
-            height="35vh"
-            backgroundSize="contain"
-            backgroundRepeat="no-repeat"
-            backgroundPosition="center"
-          ></Box>
-          <Text
-            fontWeight="bold"
-            fontSize={['4vw', '4vw', '4vw', '30px']}
-            marginLeft="7%"
-            marginTop={['-40px', '-40px', '20px']}
-            marginBottom={['40px', '40px', '20px']}
-          >
-            {currentJob?.title}
-          </Text>
-
-          <Flex flexDir="column" gap="10px">
-            {currentJob?.description.map((item) => (
-              <Text
-                fontWeight="regular"
-                fontSize={['3.3vw', '3.3vw', '3.3vw', '18px']}
-                marginLeft="7%"
-                width="85%"
-                color="gray.500"
-              >
-                {item}
-              </Text>
-            ))}
-          </Flex>
-
-          <Flex
-            width="86%"
-            borderTop="1px solid black"
-            margin="5vh auto"
-            justifyContent="center"
-            alignItems="center"
-            padding="20px"
-            gap="15px"
-            fontSize={['5vw', '5vw', '5vw', '36px']}
-            wrap="wrap"
-          >
-            {currentJob?.techs.map((item) => (
-              <Tooltip label={item} closeOnClick={false}>
-                <Text> {getTechIcon(item)}</Text>
-              </Tooltip>
-            ))}
-          </Flex>
-        </ModalContent>
-      </Modal>
+      <JobModal isOpen={isOpen} job={currentJob} onClose={onClose} />
     </>
   );
 };

@@ -40,6 +40,7 @@ export const portugues = {
       sql: 'É uma linguagem de domínio específico desenvolvida para gerenciar dados relacionais em um sistema de gerenciamento de banco de dados.',
     },
     SeeMore: 'Ver mais skills',
+    modalTitle: 'MINHAS SKILLS',
   },
   jobs: {
     title: 'Meus Jobs',
@@ -102,6 +103,7 @@ export const english = {
       sql: 'It is a domain-specific language designed to manage relational data in a database management system.',
     },
     SeeMore: 'Check all skills',
+    modalTitle: 'MY SKILLS',
   },
   jobs: {
     title: 'My Jobs',

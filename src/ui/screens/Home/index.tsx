@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { Flex, Text, Tooltip } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import Button from '@/ui/components/Button';
 import Typed from 'typed.js';
 import PurpleBG from '@assets/images/purple-bg.svg';
@@ -80,14 +80,13 @@ const Home = () => {
             mr={['0', '0', '30px']}
           >
             <Fade cascade big>
-              <Tooltip label="Hey, I'm here!" aria-label="A tooltip">
-                <Text
-                  fontSize={['4vw', '4vw', '2.5vw', '30px']}
-                  className={`${isAnimating && 'change-animate'}`}
-                >
-                  {home.grettings}
-                </Text>
-              </Tooltip>
+              <Text
+                fontSize={['4vw', '4vw', '2.5vw', '30px']}
+                className={`${isAnimating && 'change-animate'}`}
+              >
+                {home.grettings}
+              </Text>
+
               <Text
                 fontSize={['8vw', '8vw', '6vw', '70px']}
                 color="purple.800"

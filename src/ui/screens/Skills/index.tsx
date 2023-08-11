@@ -1,13 +1,16 @@
 import { useContext, useEffect } from 'react';
 import Experience from '@/ui/components/Experience';
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, Text, useDisclosure } from '@chakra-ui/react';
 import { ControllerContext } from '@/infra/contexts/Controllers.context';
 import { getColor } from '@/infra/helpers/colors';
 import { ThemeEnum } from '@/infra/contexts/types';
 import { Bounce, Fade, Zoom } from 'react-awesome-reveal';
 import Button from '@/ui/components/Button';
+import SkillsModal from './SkillsModal';
 
 const Skills = () => {
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
   const {
     items: { theme },
   } = useContext(ControllerContext);
@@ -45,10 +48,11 @@ const Skills = () => {
           {skills.title}
         </Text>
         <Text
+          display="inline-block"
           marginBottom="48px"
           color="gray.800"
           fontWeight="bold"
-          width="60vw"
+          maxW="60vw"
           textAlign="center"
           fontSize={['4vw', '4vw', '4vw', '36px']}
           className={`${isAnimating && 'change-animate'}`}
@@ -103,12 +107,12 @@ const Skills = () => {
             bgColor="yellow.800"
             label={skills.SeeMore}
             labelColor="white"
-            onClick={() => {
-              console.log('test');
-            }}
+            onClick={onOpen}
           />
         </Bounce>
       </Flex>
+
+      <SkillsModal isOpen={isOpen} onClose={onClose} />
     </Flex>
   );
 };
